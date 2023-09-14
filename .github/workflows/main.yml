@@ -38,7 +38,9 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-        env: ${{secrets.VITE_ENV}}
+        env:
+          VITE_ENV: ${{secrets.VITE_ENV}}
+          VITE_ENV_NOT: ${{ secrets.VITE_ENV }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v3
